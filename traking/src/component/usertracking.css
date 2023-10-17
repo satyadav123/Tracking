@@ -1,0 +1,61 @@
+/* Style for the entire component */
+.user-tracking-component {
+    font-family: Arial, sans-serif;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+}
+
+/* Style for headings */
+.user-tracking-component h1 {
+    font-size: 24px;
+    color: #333;
+    margin: 0 0 20px;
+}
+
+/* Style for form labels */
+.user-tracking-component label {
+    font-size: 16px;
+    color: #333;
+    float: left;
+    margin-right: 10px; /* Adjust the margin-right to create space on the left side */
+}
+
+/* Style for form input fields */
+.user-tracking-component input[type="email"],
+.user-tracking-component input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+}
+
+/* Style for form buttons */
+.user-tracking-component button {
+   
+    color:black;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: 1px solid red;
+    border-radius: 3px;
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+.user-tracking-component button:hover {
+    background-color:red;
+}
+.button-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.Right-button{
+    margin-left: 15px;
+}
