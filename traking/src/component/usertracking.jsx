@@ -46,12 +46,15 @@ const UserTrackingComponent = () => {
 
   useEffect(() => {
     // Update the user's cookie with the latest interactions
-    const userCookiee = JSON.parse(Cookies.get('userCookiee'));
+    if(Cookies.get('userCookiee')!==undefined){
+        const userCookiee = JSON.parse(Cookies.get('userCookiee'));
+
+   
 
     if (userCookiee) {
       userCookiee.interactions = interactions;
       Cookies.set('userCookiee', JSON.stringify(userCookiee), { expires: 365 });
-    }
+    }}
   }, [interactions]);
 
   // Function to handle form submission and store email and password in cookies
@@ -62,17 +65,22 @@ const UserTrackingComponent = () => {
     const password = event.target.password.value;
 
     // Update the user's cookie with email and password data
-    const userCookiee = JSON.parse(Cookies.get('userCookiee'));
+    if(Cookies.get('userCookiee')!==undefined){
+        const userCookiee = JSON.parse(Cookies.get('userCookiee'));
+    
+   
     userCookiee.email = email;
     userCookiee.password = password;
     Cookies.set('userCookiee', JSON.stringify(userCookiee), { expires: 365 });
-  };
+  }};
 
   // Retrieve email and password from cookies (if available in the cookies then it auto fill the form)
-  const userCookiee = JSON.parse(Cookies.get('userCookiee'));
-  const initialEmail = userCookiee.email || '';
-  const initialPassword = userCookiee.password || '';
+  if(Cookies.get('userCookiee')!==undefined){
+    const userCookiee = JSON.parse(Cookies.get('userCookiee'));
 
+  var initialEmail = userCookiee.email || '';
+  var initialPassword = userCookiee.password || '';
+  }
   // Function to send user data to a dummy API (JSONPlaceholder)
   const sendCookieToServer = () => {
     const userCookiee = Cookies.get('userCookiee');
